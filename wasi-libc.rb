@@ -3,6 +3,7 @@ class WasiLibc < Formula
   homepage "https://wasi.dev/"
   head "https://github.com/CraneStation/wasi-libc.git"
   depends_on "llvm" => :build
+  keg_only "WASI-only headers clash with system headers"
 
   def install
     system "make", "SYSROOT=#{prefix}",
